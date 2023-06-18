@@ -7,7 +7,7 @@
 
 /**
 
- * main - Determines if a number is positive, negative or zero.
+ * main - Entry point
 
  *
 
