@@ -1,2 +1,2 @@
 0x14. C - Bit manipulation
-All tasks to be listed numerically
+all tasks to be listed numerically
