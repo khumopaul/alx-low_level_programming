@@ -1,51 +1,32 @@
-#include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
 
 /**
- * simple_print_buffer - prints buffer in hexa
- * @buffer: the address of memory to print
- * @size: the size of the memory to print
- *
- * Return: Nothing.
- */
-void simple_print_buffer(char *buffer, unsigned int size)
-{
-    unsigned int i;
-
-    i = 0;
-    while (i < size)
-    {
-        if (i % 10)
-        {
-            printf(" ");
-        }
-        if (!(i % 10) && i)
-        {
-            printf("\n");
-        }
-        printf("0x%02x", buffer[i]);
-        i++;
-    }
-    printf("\n");
-}
-
-/**
- * main - check the code for ALX School students.
- *
+ * main - check the code
+ * 
  * Return: Always 0.
  */
 int main(void)
 {
-    char *buffer;
+    listint_t *head;
+    listint_t *new;
+    listint_t hello = {8, NULL};
+    size_t n;
 
-    buffer = create_array(98, 'H');
-    if  (buffer == NULL)
+    head = &hello;
+    new = malloc(sizeof(listint_t));
+    if (new == NULL)
     {
-        printf("failed to allocate memory\n");
+        printf("Error\n");
         return (1);
     }
-    simple_print_buffer(buffer, 98);
-    free(buffer);
+    new->n = 9;
+    new->next = head;
+    head = new;
+    n = print_listint(head);
+    printf("-> %lu elements\n", n);
+    free(new);
     return (0);
 }
