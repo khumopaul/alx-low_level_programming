@@ -8,6 +8,7 @@
  * 
  * Return: Always 0.
  */
+ <!--github demo comment-->
 int main(void)
 {
     listint_t *head;
